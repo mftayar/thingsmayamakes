@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Things Maya Makes</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="robots" content="noindex, nofollow">
@@ -22,6 +27,8 @@
   --paper:#151917; --paper-2:#1D2220; --ink:#E8E6DE; --muted:#A3A69E; --rule:#E8E6DE; --hair:#3A403C;
   --green:#7CC7B6; --spot:#E39A52; --scrim:rgba(4,6,5,.95); --shadow:rgba(0,0,0,.4); color-scheme:dark }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%}
 html{scroll-behavior:smooth}
 #work,#profile,#contact{scroll-margin-top:52px}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5;margin:0;-webkit-font-smoothing:antialiased}
@@ -237,6 +244,8 @@ figcaption{font-style:italic;font-size:14px;color:var(--muted);padding-block:6px
 .gate .err{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--spot);min-height:1.4em;margin-top:10px;font-style:normal}
 body.gated{overflow:hidden}
 </style>
+</head>
+<body>
 
 <div class="gate" id="gate" role="dialog" aria-modal="true" aria-label="Password required">
   <div class="gate-box">
@@ -381,7 +390,7 @@ const cos=["Eli Lilly","Novo Nordisk","Novartis","Regeneron","Merck","Pfizer","A
 const ul='<ul>'+cos.map(b=>`<li>${b}</li>`).join('')+'</ul>';
 $('#track').innerHTML=ul+ul.replace('<ul>','<ul aria-hidden="true">');
 
-const F=[["all","All"],["health","Health & pharma"],["web","Websites"],["concept","Campaigns & concepts"],["video","Video"],["content","Email & content"]];
+const F=[["all","All"],["video","Video"],["health","Health & pharma"],["web","Websites"],["concept","Campaigns & concepts"],["content","Email & content"]];
 $('#chips').innerHTML=F.map(([k,l],i)=>`<button class="chip" type="button" data-f="${k}" aria-pressed="${i===0}">${esc(l)}</button>`).join('');
 
 const KICK={health:"Health & pharma",web:"Websites",concept:"Campaigns & concepts",video:"Video",content:"Email & content"};
@@ -500,3 +509,6 @@ if(matchMedia('(pointer:fine)').matches&&!calm){
 }
 route();
 </script>
+
+</body>
+</html>
