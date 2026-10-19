@@ -228,7 +228,7 @@ figcaption{font-style:italic;font-size:14px;color:var(--muted);padding-block:6px
 /* subscriber gate */
 .gate{position:fixed;inset:0;z-index:80;background:var(--paper);display:grid;place-items:center;overflow-y:auto;padding:max(24px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .gate-box{width:min(520px,100%);text-align:center;border-top:3px double var(--rule);border-bottom:3px double var(--rule);padding:26px 4px 30px}
-.gate .mast{font-size:clamp(46px,12vw,82px);margin:6px 0 10px}
+.gate .mast{font-size:clamp(46px,12vw,82px);margin:0 0 14px}
 .gate h2{font-family:var(--display);font-weight:800;font-size:clamp(26px,6vw,34px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 8px}
 .gate p{margin:0 0 18px;font-style:italic;color:var(--muted)}
 .gate form{display:flex;gap:8px;max-width:380px;margin:0 auto}
@@ -238,11 +238,9 @@ figcaption{font-style:italic;font-size:14px;color:var(--muted);padding-block:6px
 body.gated{overflow:hidden}
 </style>
 
-<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-h">
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-label="Password required">
   <div class="gate-box">
-    <span class="kick">Subscribers only</span>
     <p class="mast" aria-label="The Copy Desk">The Cop<span class="sw">y</span> Des<span class="sw">k</span></p>
-    <h2 id="gate-h">This edition is for clients.</h2>
     <p>Enter the password you were given to read the portfolio of Maya Franco-Tayar.</p>
     <form id="gate-form" autocomplete="off"><label for="gate-pw" hidden>Password</label><input id="gate-pw" type="password" placeholder="Password" required><button type="submit">Read the paper</button></form>
     <p class="err" id="gate-err" aria-live="polite"></p>
