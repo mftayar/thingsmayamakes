@@ -1,0 +1,504 @@
+<title>Things Maya Makes</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Maya Franco-Tayar, freelance copy supervisor. Campaigns, websites, patient education, and brand stories.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Grenze+Gotisch:wght@600&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a broadsheet. Masthead → lead story + quotes column → company ticker → work as a front page of articles (full colour) → corrections box + profile → classifieds. Case studies open as full articles. */
+:root{
+  --paper:#F3F1EA; --paper-2:#E8E5DA; --ink:#161A18; --muted:#5E625D; --rule:#161A18; --hair:#C3BFB2;
+  --green:#1F6B5F; --spot:#B8611A; --scrim:rgba(14,18,16,.93); --shadow:rgba(20,24,20,.16);
+  --mast:"UnifrakturMaguntia","Old English Text MT",serif;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#151917; --paper-2:#1D2220; --ink:#E8E6DE; --muted:#A3A69E; --rule:#E8E6DE; --hair:#3A403C;
+  --green:#7CC7B6; --spot:#E39A52; --scrim:rgba(4,6,5,.95); --shadow:rgba(0,0,0,.4); color-scheme:dark }}
+:root[data-theme="dark"]{
+  --paper:#151917; --paper-2:#1D2220; --ink:#E8E6DE; --muted:#A3A69E; --rule:#E8E6DE; --hair:#3A403C;
+  --green:#7CC7B6; --spot:#E39A52; --scrim:rgba(4,6,5,.95); --shadow:rgba(0,0,0,.4); color-scheme:dark }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+#work,#profile,#contact{scroll-margin-top:52px}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5;margin:0;-webkit-font-smoothing:antialiased}
+body.locked{overflow:hidden}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit} button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.kick{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.folio{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--paper);border-bottom:1px solid var(--rule)}
+.folio .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:8px}
+.sw{font-family:"Grenze Gotisch",var(--mast);font-weight:600;font-size:.98em}
+.mini{font-family:var(--mast);font-weight:400;font-size:24px;text-decoration:none;line-height:1}
+.folio .mini{opacity:0;transform:translateY(4px);transition:opacity .3s,transform .3s}
+.folio.show .mini{opacity:1;transform:none}
+.folio nav{display:flex;gap:20px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.folio nav a{text-decoration:none;color:var(--muted)} .folio nav a:hover{color:var(--ink)}
+
+.ears{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:18px 6px}
+.ear{border:1px solid var(--rule);padding:6px 10px;max-width:230px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;line-height:1.35}
+.ear b{display:block;font-family:var(--display);font-size:15px;letter-spacing:-.01em;text-transform:none}
+.mast{font-family:var(--mast);font-weight:400;font-size:clamp(50px,11vw,144px);line-height:1;letter-spacing:0;text-align:center;margin:4px 0 6px;animation:ink 1.1s var(--ease) both}
+@keyframes ink{from{opacity:0;filter:blur(4px)}}
+.dateline{border-top:3px double var(--rule);border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-block:7px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+
+.front{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(0,1fr);border-bottom:1px solid var(--rule);padding-block:22px 26px}
+.lead{padding-right:26px;border-right:1px solid var(--hair);min-width:0}
+.lead h1{font-family:var(--display);font-weight:800;font-size:clamp(46px,7.4vw,104px);line-height:.9;letter-spacing:-.04em;margin:8px 0 12px;text-wrap:balance}
+.lead h1 em{font-family:var(--body);font-weight:400;font-style:italic;color:var(--green);letter-spacing:-.02em}
+.w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em;margin-bottom:-.08em}
+.w>span{display:inline-block;animation:rise .9s var(--ease) both}
+.w:nth-child(2)>span{animation-delay:.08s}.w:nth-child(3)>span{animation-delay:.16s}.w:nth-child(4)>span{animation-delay:.24s}
+@keyframes rise{from{transform:translateY(105%)}}
+.dek{font-style:italic;font-size:clamp(20px,2.2vw,26px);line-height:1.3;margin:0 0 16px;max-width:40ch}
+.byline{display:flex;gap:14px;flex-wrap:wrap;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding-block:6px;margin-bottom:16px}
+.lead-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:22px}
+.cols2{columns:2 200px;column-gap:22px;column-rule:1px solid var(--hair);text-align:justify;hyphens:auto}
+.cols2 p{margin:0 0 10px}
+.drop::first-letter{font-family:var(--display);font-weight:800;float:left;font-size:4.1em;line-height:.8;padding:6px 8px 0 0;color:var(--green)}
+figure{margin:0}
+.bw img{width:100%;height:auto;display:block;filter:grayscale(1) contrast(1.06)}
+figcaption{font-style:italic;font-size:14px;color:var(--muted);padding-block:6px;border-bottom:1px solid var(--hair)}
+.cont{font-style:italic;font-size:14.5px;color:var(--green);text-decoration:none}
+.cont:hover{text-decoration:underline}
+
+.side{padding-left:26px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.side h2{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.01em;margin:0;border-bottom:3px solid var(--rule);padding-bottom:6px}
+.q{display:block;text-decoration:none;border-bottom:1px solid var(--hair);padding-bottom:14px;cursor:pointer}
+.q p{font-size:21px;line-height:1.25;margin:0 0 6px}
+.q p::before{content:"“";font-family:var(--display);font-weight:800;color:var(--green)}
+.q p::after{content:"”";font-family:var(--display);font-weight:800;color:var(--green)}
+.q:hover p{color:var(--green)}
+.q.hot{background:var(--paper-2);margin-inline:-12px;padding:14px 12px;border-bottom:0;outline:1px solid var(--hair)}
+.q.hot p{font-family:var(--display);font-weight:800;font-size:28px;letter-spacing:-.02em;line-height:1.08;min-height:3.24em;transition:opacity .35s}
+.dots{display:flex;gap:5px;margin-top:10px}
+.dots button{width:18px;height:4px;border:0;padding:0;background:var(--hair);cursor:pointer;border-radius:2px}
+.dots button[aria-current="true"]{background:var(--ink)}
+
+.ticker{border-bottom:3px double var(--rule);display:flex;align-items:center;overflow:hidden}
+.ticker .tag{flex:none;background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:9px 12px}
+.ticker .run{overflow:hidden;flex:1;min-width:0}
+.ticker .track{display:flex;width:max-content;animation:drift 42s linear infinite}
+.ticker:hover .track{animation-play-state:paused}
+.ticker ul{display:flex;list-style:none;margin:0;padding:0}
+.ticker li{font-family:var(--display);font-weight:600;font-size:16px;white-space:nowrap;padding:8px 18px;border-right:1px solid var(--hair)}
+@keyframes drift{to{transform:translateX(-50%)}}
+
+.sect{display:flex;align-items:end;justify-content:space-between;gap:12px;border-bottom:3px solid var(--rule);padding:30px 0 8px;flex-wrap:wrap}
+.sect h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.4vw,40px);letter-spacing:-.025em;margin:0;line-height:1}
+.sect h2 sup{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--muted);letter-spacing:0;vertical-align:top;margin-left:4px}
+.chips{display:flex;flex-wrap:wrap;border:1px solid var(--rule)}
+.chip{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;border:0;border-right:1px solid var(--rule);background:transparent;padding:7px 11px;cursor:pointer}
+.chip:last-child{border-right:0}
+.chip:hover{background:var(--paper-2)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+.news{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--hair);border-bottom:1px solid var(--hair);grid-auto-flow:dense}
+.art{background:var(--paper);padding:18px 16px 20px;display:flex;flex-direction:column;gap:8px;text-decoration:none;min-width:0;cursor:pointer}
+.art.wide{grid-column:span 2}
+.art .ph{position:relative;background:var(--paper-2);aspect-ratio:4/3;display:grid;place-items:center;overflow:hidden;padding:14px}
+.art.wide .ph{aspect-ratio:16/9}
+.art .ph img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 8px 22px var(--shadow);filter:grayscale(1) contrast(1.05);transition:transform .6s var(--ease),filter .5s var(--ease)}
+.art:hover .ph img,.art:focus-visible .ph img{transform:translateY(-4px) scale(1.02);filter:none}
+.vtag{position:absolute;top:10px;left:10px;z-index:1;background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px}
+.play{position:absolute;left:14px;bottom:14px;width:44px;height:44px;border-radius:50%;background:var(--paper);display:grid;place-items:center;box-shadow:0 6px 18px var(--shadow)}
+.play::after{content:"";border-left:12px solid var(--ink);border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:4px}
+.art h3{font-family:var(--display);font-weight:800;font-size:22px;line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.art.wide h3{font-size:clamp(26px,2.8vw,34px)}
+.art p{margin:0;font-size:15.5px;line-height:1.45}
+.art:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion:no-preference){
+  .art{animation:enter linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+  @keyframes enter{from{opacity:.2;transform:translateY(24px)}}
+}}
+
+.lower{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);border-bottom:1px solid var(--rule)}
+.corr{padding:26px 24px 28px 0;border-right:1px solid var(--hair)}
+.box{border:2px solid var(--rule);padding:16px 18px;position:sticky;top:64px}
+.box h4{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;border-bottom:1px solid var(--rule);padding-bottom:6px}
+.box p{margin:0 0 8px}
+.edit-line{font-family:var(--display);font-weight:800;font-size:clamp(30px,3.4vw,42px);letter-spacing:-.03em;line-height:1.05}
+.edit-line del{position:relative;text-decoration:none;color:var(--muted)}
+.edit-line del::after{content:"";position:absolute;left:-3%;right:-3%;top:52%;height:.09em;background:var(--spot);transform:rotate(-3deg);transform-origin:left}
+.edit-line ins{text-decoration:none;font-family:var(--body);font-style:italic;font-weight:400;color:var(--green)}
+.edit.pre del::after{transform:rotate(-3deg) scaleX(0)}
+.edit.pre ins{opacity:0}
+.edit.go del::after{transition:transform .7s var(--ease)}
+.edit.go ins{transition:opacity .6s .5s}
+.box .note{font-style:italic;font-size:15.5px;color:var(--muted)}
+.profile{padding:26px 0 28px 24px;display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:22px;align-items:start}
+.profile h3{font-family:var(--display);font-weight:800;font-size:40px;letter-spacing:-.025em;margin:2px 0 10px;line-height:1}
+.profile .cols2{columns:2 250px}
+
+.classifieds{padding-bottom:30px}
+.ads{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-top:18px}
+.ad{border:1px solid var(--rule);padding:14px 16px;font-size:15.5px}
+.ad b{display:block;font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.01em;text-transform:uppercase;margin-bottom:4px}
+.ad.main{grid-column:span 2;border:3px double var(--rule);background:var(--paper-2)}
+.ad.main b{font-size:clamp(26px,3.4vw,42px);line-height:1;margin-bottom:10px}
+.mailrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.email{font-family:var(--display);font-weight:600;font-size:24px;user-select:all;color:var(--green);word-break:break-all}
+.copy{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;border:1px solid var(--rule);background:transparent;padding:7px 12px;cursor:pointer}
+.copy:hover{background:var(--ink);color:var(--paper)}
+.foot{border-top:3px double var(--rule);padding-block:10px 36px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+
+.sheet{position:fixed;inset:0;z-index:30;background:var(--paper);overflow-y:auto;overscroll-behavior:contain;transform:translateY(100%);visibility:hidden;transition:transform .55s var(--ease),visibility 0s .55s}
+.sheet:focus{outline:none}
+.sheet.open{transform:none;visibility:visible;transition:transform .55s var(--ease)}
+.sheet-bar{position:sticky;top:0;z-index:2;background:var(--paper);border-bottom:1px solid var(--rule);padding-top:env(safe-area-inset-top,0px)}
+.sheet-bar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:9px}
+.pill{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;border:1px solid var(--rule);background:transparent;padding:7px 12px;cursor:pointer;display:inline-flex;gap:8px;align-items:center;text-decoration:none}
+.pill:hover{background:var(--ink);color:var(--paper)}
+.pnav{display:flex;gap:6px}
+.case-head .wrap{padding-block:clamp(28px,5vw,56px) 24px}
+.case-head h2{font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4vw,88px);line-height:.92;letter-spacing:-.04em;margin:10px 0 16px;max-width:18ch;text-wrap:balance}
+.facts{display:flex;flex-wrap:wrap;gap:6px 22px;border-top:3px double var(--rule);border-bottom:1px solid var(--rule);padding-block:8px;margin:0}
+.facts div{display:flex;gap:8px;align-items:baseline}
+.facts dt{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.facts dd{margin:0;font-weight:600}
+.case-body{columns:2 300px;column-gap:28px;column-rule:1px solid var(--hair);margin-top:22px}
+.case-body section{break-inside:avoid;margin-bottom:16px}
+.case-body h4{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin:0 0 4px;font-weight:500}
+.case-body p{margin:0}
+.case-body section:first-child p::first-letter{font-family:var(--display);font-weight:800;float:left;font-size:3.6em;line-height:.8;padding:5px 7px 0 0;color:var(--green)}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.gallery .wrap{padding-bottom:80px}
+.set{border-top:1px solid var(--rule);padding-top:14px;margin-top:28px}
+.set h5{font-family:var(--display);font-weight:800;font-size:20px;margin:0 0 14px;letter-spacing:-.01em}
+.shots{columns:3 260px;column-gap:16px}
+.shots.few{columns:2 300px}
+.shots.one{columns:1;max-width:900px}
+.shot{break-inside:avoid;margin:0 0 16px;background:var(--paper-2);border:0;padding:clamp(10px,1.4vw,16px);cursor:zoom-in;display:block;width:100%}
+.shot img{display:block;width:100%;height:auto;box-shadow:0 8px 20px var(--shadow)}
+.more{margin-top:6px}
+.vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:18px}
+.vid{display:flex;flex-direction:column;gap:8px;text-decoration:none}
+.vid .frame{position:relative;overflow:hidden;background:var(--paper-2);aspect-ratio:16/9}
+.vid .frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.vid:hover .frame img{transform:scale(1.03)}
+.vid .play{left:50%;top:50%;bottom:auto;width:62px;height:62px;transform:translate(-50%,-50%)}
+.vid b{font-family:var(--display);font-weight:800;font-size:19px}
+
+.lb{position:fixed;inset:0;z-index:40;background:var(--scrim);display:grid;grid-template-rows:auto 1fr;opacity:0;visibility:hidden;transition:opacity .25s,visibility 0s .25s}
+.lb.open{opacity:1;visibility:visible;transition:opacity .25s}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;padding:max(12px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));color:#E8E6DE}
+.lb-bar .small{color:#BDBAB0}
+.lb .pill{color:#E8E6DE;border-color:rgba(232,230,222,.4)}
+.lb-stage{overflow:auto;display:grid;place-items:center;padding:0 max(64px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(64px,env(safe-area-inset-left,0px))}
+.lb-stage img{max-width:min(1300px,100%);height:auto;max-height:calc(100vh - 90px);object-fit:contain}
+.lb-stage img.tall{max-height:none}
+.arrow{position:fixed;top:50%;transform:translateY(-50%);width:46px;height:46px;border:1px solid rgba(232,230,222,.4);background:rgba(14,18,16,.6);color:#E8E6DE;cursor:pointer;font-size:20px}
+.arrow.prev{left:max(10px,env(safe-area-inset-left,0px))}.arrow.next{right:max(10px,env(safe-area-inset-right,0px))}
+
+.cursor{position:fixed;left:0;top:0;z-index:35;pointer-events:none;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:8px 12px;opacity:0;transform:translate(-50%,-50%) scale(.6);transition:opacity .2s,transform .25s var(--ease)}
+.cursor.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+@media (max-width:980px){
+  .front,.lower{grid-template-columns:minmax(0,1fr)}
+  .lead{padding-right:0;border-right:0}
+  .side{padding-left:0;padding-top:22px}
+  .corr{padding-right:0;border-right:0}.box{position:static}
+  .profile{padding-left:0}
+  .news{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .lead-body,.profile{grid-template-columns:minmax(0,1fr)}
+  .news{grid-template-columns:minmax(0,1fr)}.art.wide{grid-column:auto}.art.wide .ph{aspect-ratio:4/3}
+  .art{padding-inline:0}
+  .ads{grid-template-columns:minmax(0,1fr)}.ad.main{grid-column:auto}
+  .ear{display:none}
+  .cols2{text-align:left}
+  .folio nav{gap:12px;font-size:11px}
+  .sheet-bar .mini{display:none}
+  .lb-stage{padding-left:max(10px,env(safe-area-inset-left,0px));padding-right:max(10px,env(safe-area-inset-right,0px))}
+  .arrow{top:auto;bottom:max(14px,env(safe-area-inset-bottom,0px));transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .ticker .track{flex-wrap:wrap}.ticker ul+ul{display:none}
+}
+
+/* subscriber gate */
+.gate{position:fixed;inset:0;z-index:80;background:var(--paper);display:grid;place-items:center;overflow-y:auto;padding:max(24px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.gate-box{width:min(520px,100%);text-align:center;border-top:3px double var(--rule);border-bottom:3px double var(--rule);padding:26px 4px 30px}
+.gate .mast{font-size:clamp(46px,12vw,82px);margin:6px 0 10px}
+.gate h2{font-family:var(--display);font-weight:800;font-size:clamp(26px,6vw,34px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 8px}
+.gate p{margin:0 0 18px;font-style:italic;color:var(--muted)}
+.gate form{display:flex;gap:8px;max-width:380px;margin:0 auto}
+.gate input{flex:1;min-width:0;font:inherit;font-size:17px;padding:10px 12px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:0}
+.gate button{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--rule);background:var(--ink);color:var(--paper);padding:10px 14px;cursor:pointer}
+.gate .err{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--spot);min-height:1.4em;margin-top:10px;font-style:normal}
+body.gated{overflow:hidden}
+</style>
+
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-h">
+  <div class="gate-box">
+    <span class="kick">Subscribers only</span>
+    <p class="mast" aria-label="The Copy Desk">The Cop<span class="sw">y</span> Des<span class="sw">k</span></p>
+    <h2 id="gate-h">This edition is for clients.</h2>
+    <p>Enter the password you were given to read the portfolio of Maya Franco-Tayar.</p>
+    <form id="gate-form" autocomplete="off"><label for="gate-pw" hidden>Password</label><input id="gate-pw" type="password" placeholder="Password" required><button type="submit">Read the paper</button></form>
+    <p class="err" id="gate-err" aria-live="polite"></p>
+  </div>
+</div>
+<script>
+(function(){
+  const H="280d44ab1e9f79b5cce2dd4f58f5fe91f0fbacdac9f7447dffc318ceb79f2d02", K="tcd-access";
+  const g=document.getElementById('gate'); let ok=false;
+  try{ok=localStorage.getItem(K)===H;}catch(e){}
+  if(ok){g.remove();return;}
+  document.body.classList.add('gated');
+  const pw=document.getElementById('gate-pw'); pw.focus();
+  async function hash(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');}
+  document.getElementById('gate-form').addEventListener('submit',async e=>{
+    e.preventDefault();
+    let h=''; try{h=await hash(pw.value.trim().toLowerCase());}catch(err){}
+    if(h===H){try{localStorage.setItem(K,H);}catch(err){} document.body.classList.remove('gated'); g.remove();}
+    else{document.getElementById('gate-err').textContent='That’s not quite it. Check your password and try again.';pw.select();}
+  });
+})();
+</script>
+<header class="folio" id="folio"><div class="wrap">
+  <a class="mini" href="#top" aria-label="The Copy Desk, back to top">The Cop<span class="sw">y</span> Des<span class="sw">k</span></a>
+  <nav aria-label="Main"><a href="#work">Work</a><a href="#profile">Profile</a><a href="#contact">Classifieds</a></nav>
+</div></header>
+
+<main id="top">
+<div class="wrap">
+  <div class="ears">
+    <div class="ear"><b>CPR for the ABCs</b>Breathing life into words since 2015</div>
+    <div class="ear" style="text-align:right"><b>Portland, Oregon</b>Clear skies · Copy on deadline</div>
+  </div>
+  <p class="mast" role="banner" aria-label="The Copy Desk">The Cop<span class="sw">y</span> Des<span class="sw">k</span></p>
+  <div class="dateline"><span>Vol. XI · 11 years in print</span><span id="today">Monday, October 19, 2026</span><span>Freelance copy supervisor</span></div>
+
+  <section class="front">
+    <article class="lead">
+      <span class="kick">Front page · Profile</span>
+      <h1 aria-label="Words excite local wordsmith"><span class="w"><span>Words</span></span> <span class="w"><span><em>excite</em></span></span> <span class="w"><span>local</span></span> <span class="w"><span>wordsmith</span></span></h1>
+      <p class="dek">Campaigns, websites, patient education, and brand stories for health, pharma, and purpose-led brands. Complex ideas, simple stories; one word at a time.</p>
+      <div class="byline"><span class="small">By Maya Franco-Tayar</span><span class="small">Portland, Oregon</span><span class="small">Est. reading time: one portfolio</span></div>
+      <div class="lead-body">
+        <figure class="bw"><img src="img/portrait-03.webp" alt="Maya Franco-Tayar" width="720" height="900"><figcaption>Maya Franco-Tayar, freelance copy supervisor.</figcaption></figure>
+        <div class="cols2">
+          <p class="drop">PORTLAND, Ore. — For 11 years, Maya Franco-Tayar has turned scientific jargon into stories people can connect with, writing for companies including Eli Lilly, Novartis, Pfizer, and CeraVe.</p>
+          <p>Her work spans patient brochures and DTC materials, unbranded awareness films, campaign concepts, websites, and the occasional podcast email.</p>
+          <p>Asked what drives her, she pointed to the words themselves: the never-ending patterns that transform understanding, and the simplicity of a sentence that sparks imagination.</p>
+          <a class="cont" href="#profile">Continued in Profile →</a>
+        </div>
+      </div>
+    </article>
+
+    <aside class="side" aria-label="Lines I’ve written">
+      <h2>Quotes of the day</h2>
+      <a class="q hot" id="hotq" href="#touch"><p id="hot" aria-live="polite">When we’re hand in hand, arm in arm, we feel closest to the ones we love.</p><span class="small" id="hotsrc">Taltz · Don’t Give Up film</span><span class="dots" id="dots"></span></a>
+      <a class="q" href="#snodium"><p>Why salt the wound?</p><span class="small">#SNODIUM · splash page</span></a>
+      <a class="q" href="#un"><p>The best a man can get… is an equal.</p><span class="small">UN SDGs · Break the Bias concept</span></a>
+      <a class="q" href="#downy"><p>Turn your threads into kindness.</p><span class="small">Downy · #HandMeDownys concept</span></a>
+    </aside>
+  </section>
+</div>
+
+<div class="ticker" aria-label="Companies I’ve written for"><span class="tag">Also written for</span><div class="run"><div class="track" id="track"></div></div></div>
+
+<div class="wrap">
+  <section id="work">
+    <div class="sect"><h2>Selected work<sup id="count"></sup></h2><div class="chips" role="group" aria-label="Filter work" id="chips"></div></div>
+    <div class="news" id="grid"></div>
+  </section>
+
+  <section class="lower" id="profile">
+    <div class="corr">
+      <div class="box edit" id="edit">
+        <h4>Corrections</h4>
+        <p class="edit-line">Good copy is <del>clever</del> <ins>clear</ins> first.</p>
+        <p class="note">Eleven years of writing, editing, and curating copy that has to be right: medically, legally, and emotionally.</p>
+      </div>
+    </div>
+    <div class="profile">
+      <figure class="bw"><img src="img/portrait-03.webp" alt="" loading="lazy" width="720" height="900"><figcaption>The writer, between deadlines.</figcaption></figure>
+      <div>
+        <span class="kick">Profile</span>
+        <h3>Hello!</h3>
+        <div class="cols2">
+          <p class="drop">My name is Maya Franco-Tayar. I am a freelance writer, avid adventurer, ocean addict, and soup savant with a passion for storytelling.</p>
+          <p>I have 11 years of experience crafting compelling and effective messaging for diverse audiences and transforming scientific jargon into engaging stories people can connect with.</p>
+          <p>Words excite me. Maybe it’s the never-ending patterns that transform understanding, the simplicity of a sentence that sparks imagination, or the dependency of each word on another to form context. Whatever it is, I wield them to create everything from concepts to campaigns, headlines to websites, copy for treatments, awareness initiatives, articles, blog posts, podcast summaries, ads, social media, and content for entrepreneurs across industries.</p>
+          <p>I have worked remotely for over 6 years, and often find inspiration in the culture and people around me. As a wandering wordsmith, I am spurred with curiosity about the impact of storytelling on societal and individual development. This insatiable interest has led me around the globe, backpacking through Southeast Asia, South America, Europe, and Australia. Although my spontaneity has sometimes gotten me in trouble, I’ve found that it only leads to good stories. And I love a good story. Because after all, when it comes to engaging an audience, it all starts with a little imagination—and a well-woven tale.</p>
+          <p>The next epic story is just an email away.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="classifieds" id="contact">
+    <div class="sect"><h2>Classifieds</h2><span class="small">For projects and inquiries</span></div>
+    <div class="ads">
+      <div class="ad main"><b>Wanted: the next epic story.</b>Freelance copy supervisor seeks companies with something to say. Health, pharma, and purpose-led preferred. Inquire within.
+        <div class="mailrow"><span class="email" id="email">mftayar@gmail.com</span><button class="copy" id="copy" type="button">Copy email</button></div></div>
+      <div class="ad"><b>For hire</b>Concepts, campaigns, websites, patient education, social, and the occasional podcast summary.</div>
+    </div>
+  </section>
+
+  <div class="foot"><span class="small">© The Copy Desk · Maya Franco-Tayar</span><span class="small">All the copy that’s fit to print</span></div>
+</div>
+</main>
+
+<div class="sheet" id="sheet" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="case-title">
+  <div class="sheet-bar"><div class="wrap">
+    <button class="pill" id="close" type="button">← Front page</button>
+    <span class="mini" aria-hidden="true">The Cop<span class="sw">y</span> Des<span class="sw">k</span></span>
+    <div class="pnav"><button class="pill" id="prevp" type="button" aria-label="Previous project">Prev</button><button class="pill" id="nextp" type="button" aria-label="Next project">Next</button></div>
+  </div></div>
+  <div id="case"></div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lb-bar"><span class="small" id="lbcount"></span><button class="pill" id="lbclose" type="button">Close ✕</button></div>
+  <div class="lb-stage" id="lbstage"><img id="lbimg" alt=""></div>
+  <button class="arrow prev" id="lbprev" type="button" aria-label="Previous image">←</button>
+  <button class="arrow next" id="lbnext" type="button" aria-label="Next image">→</button>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true">Read</div>
+
+<script>
+const DATA={"projects": [{"id": "scout", "client": "SCOUT Health", "format": "Agency rebrand concepts", "count": "5 boards", "tags": "concept health", "span": "wide", "title": "A rare breed", "cover": "scout-02", "body": [["The brief", "Reintroduce SCOUT Health, the longest-running rare disease and specialty pharma agency."], ["The idea", "To know rare, you have to be rare. The platform plays on the name: portraits of rare dog breeds, a scout who knows the path, and a voice that says it plainly. “We are RARE. We are FEARLESS. We are BRAVE. We are SCOUT HEALTH.”"]], "sets": [{"imgs": ["scout-01", "scout-02", "scout-03", "scout-04", "scout-05"]}], "cw": 900, "ch": 582}, {"id": "wellstar", "client": "Wellstar", "format": "Pitch concepts", "count": "6 boards", "tags": "concept health", "span": "wide", "title": "Nothing to be afraid of", "cover": "wellstar-01", "body": [["The brief", "Make the relationship between doctor and patient the reason people choose Wellstar."], ["Three routes", "<b>Nothing to be afraid of</b> takes lines that sound menacing and reveals the kindness in them: “I will turn my back on you… while you change into your hospital gown.” <b>Good enough</b> lists everything we settle for, then draws the line at healthcare. <b>Pick the right partner</b> borrows the language of dating to show what you shouldn’t accept in a doctor."]], "sets": [{"imgs": ["wellstar-01", "wellstar-02", "wellstar-03", "wellstar-04", "wellstar-05", "wellstar-06"]}], "cw": 900, "ch": 696}, {"id": "cerave", "client": "CeraVe", "format": "Ceramide panels", "count": "4 panels", "tags": "concept health", "title": "Strengthen the skin barrier", "cover": "cerave-02", "body": [["The work", "A set of panels that lead with the science. Each one opens on a ceramide insight, then shows the product that answers it, across cleanser, moisturizing cream, and sunscreen."], ["The headlines", "“Strengthen the skin barrier in just 1 wash.” “Replenish ceramides to healthy skin levels.” “Suncare your patients want to wear.”"]], "sets": [{"imgs": ["cerave-01", "cerave-02", "cerave-03", "cerave-04"]}], "cw": 900, "ch": 710}, {"id": "amvuttra", "client": "AMVUTTRA (Alnylam)", "format": "Campaign concepts", "count": "8 boards", "tags": "concept health", "title": "Every second MhATTRs", "cover": "amvuttra-01", "body": [["The brief", "hATTR amyloidosis can damage the nerves, heart, and digestive system quickly. The work had to make patients act now, while holding on to hope: AMVUTTRA starts working right after injection."], ["The routes", "“Every second MhATTRs.” “Safety is within reach.” “Danger might be closer than you think.” Each pairs a vivid, slightly unsettling image with a clear way out."]], "sets": [{"imgs": ["amvuttra-01", "amvuttra-02", "amvuttra-03", "amvuttra-04", "amvuttra-05", "amvuttra-06", "amvuttra-07", "amvuttra-08"]}], "cw": 900, "ch": 696}, {"id": "leqvio", "client": "LEQVIO (Novartis)", "format": "Animated banner ads", "count": "3 sets · 300×250", "tags": "concept health", "title": "L-Yeah! Animated banners", "cover": "leqvio-01", "body": [["The work", "Three 16-second animated banner sets for LEQVIO’s direct-to-consumer campaign, covering awareness, dosing, and efficacy. Written frame by frame, with alternate copy for testing and the safety information scrolling to close."], ["The hook", "“L-Yeah!” A celebratory sign-off that turns lower bad cholesterol (LDL-C) into a feeling."]], "sets": [{"imgs": ["leqvio-01", "leqvio-02", "leqvio-03"]}], "cw": 900, "ch": 514}, {"id": "xywav", "client": "XYWAV (Jazz Pharmaceuticals)", "format": "Patient webinar", "count": "42 slides", "tags": "health content", "span": "wide", "title": "A Patient’s Perspective on JazzCares", "cover": "xywav-01", "body": [["The work", "A webinar in which a JazzCares nurse and a real XYWAV patient talk through the support available to people on treatment: nursing and pharmacy help, financial programs, the myWAV app, and the patient mentor program."], ["The challenge", "Make it sound like a real conversation between two people, while carrying the full safety information every slide requires."]], "sets": [{"imgs": ["xywav-01", "xywav-02", "xywav-03", "xywav-04", "xywav-05", "xywav-06", "xywav-07", "xywav-08", "xywav-09", "xywav-10", "xywav-11", "xywav-12", "xywav-13", "xywav-14", "xywav-15", "xywav-16", "xywav-17", "xywav-18", "xywav-19", "xywav-20", "xywav-21", "xywav-22", "xywav-23", "xywav-24", "xywav-25", "xywav-26", "xywav-27", "xywav-28", "xywav-29", "xywav-30", "xywav-31", "xywav-32", "xywav-33", "xywav-34", "xywav-35", "xywav-36", "xywav-37", "xywav-38", "xywav-39", "xywav-40", "xywav-41", "xywav-42"]}], "cw": 900, "ch": 506}, {"id": "snodium", "client": "Unbranded · narcolepsy", "format": "Splash page", "count": "Desktop", "tags": "concept health", "title": "When your heart is on the line, say #SNODIUM", "cover": "snodium-01", "covercrop": "top", "body": [["The work", "People with narcolepsy already face a higher risk of heart failure and stroke, and some treatments carry more than the recommended daily amount of sodium. This splash page gives that problem a name patients can own, then sends them to their doctor."], ["The line", "“Why salt the wound?”"]], "sets": [{"imgs": ["snodium-01"]}], "cw": 783, "ch": 900}, {"id": "heart", "client": "Patient education", "format": "Web page · annotated draft", "count": "Desktop + mobile", "tags": "web health", "title": "Excess weight and heart health", "cover": "heart-01", "covercrop": "top", "body": [["The work", "A patient education page that explains how excess weight raises the risk of heart disease, and how losing 5% or more can help."], ["Why it’s annotated", "Every claim is referenced for medical, legal, and regulatory review."]], "sets": [{"imgs": ["heart-01", "heart-02", "heart-03", "heart-04", "heart-05", "heart-06", "heart-07", "heart-08"]}], "cw": 783, "ch": 900}, {"id": "touch", "client": "Taltz (Eli Lilly) · unbranded", "format": "Campaign video", "count": "Lead copywriter", "tags": "video health", "span": "wide", "title": "Psoriasis and the power of touch", "cover": "touchvid-01", "video": true, "body": [["Brand positioning", "<em>Psoriasis keeps patients from being vulnerable to the kind of touch that tells us we belong, we’re necessary, and we’re loved. Nothing clears psoriasis plaque better, more safely, and as easily as Taltz. Taltz lets patients be comfortable with touch again, so they can have healthy 1:1 connections with the most important person in their lives.</em>"], ["The challenge", "Build a campaign that drives education and awareness around the profound impact psoriasis has on touch, and motivates patients to ask their dermatologist about treatments that can bring completely clear skin."]], "sets": [{"videos": [["Psoriasis Education Campaign", "touchvid-01", "https://vimeo.com/250158510"]]}, {"label": "Campaign print", "imgs": ["touchvid-02", "touchvid-03"]}], "cw": 640, "ch": 360}, {"id": "living", "client": "Taltz (Eli Lilly)", "format": "Anthem film", "count": "Creative lead", "tags": "video health", "title": "Living with psoriasis", "cover": "living-01", "video": true, "body": [["The project", "We interviewed psoriasis patients around the world about how the condition shapes everyday life, and which treatment gave them the best quality of life. This anthem version weaves their stories into one, with Taltz as the hero."]], "sets": [{"videos": [["Living with Psoriasis", "living-01", "https://vimeo.com/339504713"]]}], "cw": 804, "ch": 334}, {"id": "interviews", "client": "Taltz (Eli Lilly)", "format": "Patient interview films", "count": "3 × 60 seconds", "tags": "video health", "title": "Ana, Alex, and Suzanne", "cover": "ana-01", "video": true, "body": [["The project", "Interviews with psoriasis patients from around the world about everyday life with the condition and the treatments they’d tried."], ["The challenge", "Show the impact of psoriasis, and the change Taltz made to each person’s quality of life, in 60 seconds."]], "sets": [{"videos": [["Interview with Ana", "ana-01", "https://vimeo.com/337189749"], ["Interview with Alex", "alex-01", "https://vimeo.com/337189721"], ["Interview with Suzanne", "suzanne-01", "https://vimeo.com/337189771"]]}], "cw": 786, "ch": 320}, {"id": "capabilities", "client": "Agency", "format": "Capabilities film", "count": "Video", "tags": "video", "title": "Team capabilities video", "cover": "capvid-01", "video": true, "body": [["The task", "A film showcasing the history of work our agency produced for the client."]], "sets": [{"videos": [["Team capabilities video", "capvid-01", "https://vimeo.com/873504011"]]}], "cw": 900, "ch": 379}, {"id": "manifesto", "client": "Agency", "format": "Manifesto film", "count": "Video", "tags": "video", "title": "Brand planning manifesto", "cover": "manifesto-01", "video": true, "body": [], "sets": [{"videos": [["Brand planning manifesto", "manifesto-01", "https://vimeo.com/873508780"]]}], "cw": 900, "ch": 609}, {"id": "closie", "client": "Taltz (Eli Lilly)", "format": "Activation microsite", "count": "18 layouts", "tags": "web concept health", "span": "wide", "title": "Take a Closie", "cover": "closie-02", "body": [["The idea", "Closies are the new selfies. A Closie is a photo of two or more people, taken and shared on a Taltz-branded landing page."], ["The brief", "Build a microsite that makes people want to share their Closie, with the chance to win one of six prizes."]], "sets": [{"imgs": ["closie-01", "closie-02", "closie-03", "closie-04", "closie-05", "closie-06", "closie-07", "closie-08", "closie-09", "closie-10", "closie-11", "closie-12", "closie-13", "closie-14", "closie-15", "closie-16", "closie-17", "closie-18"]}], "cw": 900, "ch": 507}, {"id": "investfem", "client": "InvestFem", "format": "Website", "count": "7 pages", "tags": "web", "title": "Closing the funding gap for women founders", "cover": "investfem-01", "covercrop": "top", "body": [["Background", "Entrepreneurship is one of the biggest drivers of growth and innovation, yet far fewer women than men are founding businesses. Access to funding is one of the main barriers, and the gap is global."], ["The objective", "Persuade women entrepreneurs, female-founded businesses, and investors to register, share their information, and join a global database."]], "links": [["Visit investfem.com", "https://investfem.com/"]], "sets": [{"imgs": ["investfem-01", "investfem-02", "investfem-03", "investfem-04", "investfem-05", "investfem-06", "investfem-07"]}], "cw": 783, "ch": 900}, {"id": "pecweb", "client": "Eli Lilly · unbranded", "format": "Patient education website", "count": "Full manuscript", "tags": "web health", "title": "Psoriasis patient education website", "cover": "pecweb-01", "body": [["The challenge", "Extend the touch campaign to the web: educate patients about the profound impact psoriasis has on touch, and motivate them to talk to their dermatologist about better treatments."]], "links": [["Read the full manuscript (PDF)", "https://maya-francotayar.squarespace.com/s/PEC-Unbranded-Website_Manuscript_MLR-Review_Final-1214_MFT.pdf"]], "sets": [{"imgs": ["pecweb-01"]}], "cw": 308, "ch": 354}, {"id": "ra", "client": "Unbranded · rheumatoid arthritis", "format": "Education website", "count": "4 pages", "tags": "web health", "title": "Stop the Silent Struggle", "cover": "ra-01", "body": [["The challenge", "Help people with rheumatoid arthritis see that they could be living better, manage their condition, and start a conversation with their doctor about a more effective treatment."]], "sets": [{"imgs": ["ra-01", "ra-02", "ra-03", "ra-04"]}], "cw": 900, "ch": 507}, {"id": "pawclub", "client": "Zoetis", "format": "Website copy", "count": "Full manuscript", "tags": "web", "title": "PawClub", "cover": "pawclub-01", "body": [["The project", "PawClub.com.au is the go-to destination for dog owners. It builds healthy habits, elevates the role of the vet, and raises awareness of Zoetis products."], ["The goal", "Replace outdated copy with helpful, informative content for new dog owners looking after the health of their new friend."]], "links": [["Read the copy manuscript (PDF)", "https://maya-francotayar.squarespace.com/s/Paw-Website_v02-jdle.pdf"]], "sets": [{"imgs": ["pawclub-01"]}], "cw": 900, "ch": 600}, {"id": "implementation", "client": "Eli Lilly · Psoriasis Education Campaign", "format": "Implementation guide", "count": "33 pages", "tags": "health content", "title": "A campaign expert, on paper", "cover": "pier-01", "body": [["The brief", "Give local affiliate partners around the world everything they need to produce each campaign piece from the global templates."], ["What it covers", "Which components are locked and which are flexible, the do’s and don’ts, and the reasoning behind every rule, so teams stay aligned and consistent everywhere. Clear, concise, and easy to use, like having a campaign expert on call."]], "sets": [{"imgs": ["pier-01", "pier-02", "pier-03", "pier-04", "pier-05", "pier-06", "pier-07", "pier-08", "pier-09", "pier-10", "pier-11", "pier-12", "pier-13", "pier-14", "pier-15", "pier-16", "pier-17", "pier-18", "pier-19", "pier-20", "pier-21", "pier-22", "pier-23", "pier-24", "pier-25", "pier-26", "pier-27", "pier-28", "pier-29", "pier-30", "pier-31", "pier-32", "pier-33"]}], "cw": 900, "ch": 696}, {"id": "vraylar", "client": "Vraylar", "format": "Patient brochure", "count": "12 pages", "tags": "health", "title": "Living better with bipolar depression and schizophrenia", "cover": "nebel-01", "body": [["The challenge", "A branded patient brochure that explains bipolar depression and schizophrenia, and shows how Vraylar can help people live better with each."]], "sets": [{"imgs": ["nebel-01", "nebel-02", "nebel-03", "nebel-04", "nebel-05", "nebel-06", "nebel-07", "nebel-08", "nebel-09", "nebel-10", "nebel-11", "nebel-12"]}], "cw": 783, "ch": 900}, {"id": "psa", "client": "Eli Lilly", "format": "Patient resources", "count": "4 pages", "tags": "health", "title": "Understanding psoriatic arthritis", "cover": "weg-01", "body": [["The challenge", "Help people with psoriatic arthritis understand their condition, and see how treatment and a healthy lifestyle can improve their symptoms."]], "sets": [{"imgs": ["weg-01", "weg-02", "weg-03", "weg-04"]}], "cw": 695, "ch": 900}, {"id": "hcp", "client": "Healthcare professionals", "format": "HCP materials", "count": "16 screens", "tags": "health", "title": "Thyroid eye disease, clinical access, and an interactive PDF", "cover": "hcppdf-01", "body": [["The work", "Three pieces written for healthcare professionals: thyroid eye disease materials, a clinical access journey, and an interactive PDF."]], "sets": [{"label": "HCP for thyroid eye disease", "imgs": ["ted-01", "ted-02", "ted-03"]}, {"label": "HCP clinical access journey", "imgs": ["access-01", "access-02"]}, {"label": "HCP interactive PDF", "imgs": ["hcppdf-01", "hcppdf-02", "hcppdf-03", "hcppdf-04", "hcppdf-05", "hcppdf-06", "hcppdf-07", "hcppdf-08", "hcppdf-09", "hcppdf-10", "hcppdf-11"]}], "cw": 900, "ch": 677}, {"id": "un", "client": "UN Sustainable Development Goals", "format": "Campaign concept", "count": "37 pages", "tags": "concept", "span": "wide", "title": "Igniting action for gender equality", "cover": "un-01", "body": [["The objective", "Educate the world about gender inequality and ignite action to reach 50:50 by 2030."], ["Two creative territories", "<b>Break the bias:</b> show how gender bias sets in early, and stop it in its tracks. <b>Count her in:</b> empower women to take action and stand up for themselves."]], "sets": [{"imgs": ["un-01", "un-02", "un-03", "un-04", "un-05", "un-06", "un-07", "un-08", "un-09", "un-10", "un-11", "un-12", "un-13", "un-14", "un-15", "un-16", "un-17", "un-18", "un-19", "un-20", "un-21", "un-22", "un-23", "un-24", "un-25", "un-26", "un-27", "un-28", "un-29", "un-30", "un-31", "un-32", "un-33", "un-34", "un-35", "un-36", "un-37"]}], "cw": 900, "ch": 582}, {"id": "ally", "client": "Ally Bank", "format": "Always-on social concept", "count": "3 boards", "tags": "concept", "title": "A relentless ally for your financial wellbeing", "cover": "ally-01", "body": [["The objective", "Expand Ally’s messaging and position it as a leader in financial services, for affluent Millennials, Gen X, and Boomers."], ["Measured by", "Engagement first (views, clicks to Ally.com, shares), then conversation about Ally."], ["Mandatories", "Favour moving images and formats beyond the standard post, like carousels and conversation units. Speak to Ally as a whole: top-tier service, great rates, and a relentless ally for your financial wellbeing."]], "sets": [{"imgs": ["ally-01", "ally-02", "ally-03"]}], "cw": 900, "ch": 582}, {"id": "psaconcept", "client": "Taltz (Eli Lilly)", "format": "Campaign concept", "count": "3 boards", "tags": "concept health", "title": "Hurting but hopeful", "cover": "psaconcept-01", "body": [["The objective", "Our Hurting But Hopeful patient is in real pain, and their limits are straining their relationships. Convince them Taltz can improve both joint symptoms and skin, so they compromise less on time with the people who matter most."], ["The approach", "Lead with emotion. The rational benefit earns the connection, and the emotional payoff makes it stick."]], "sets": [{"imgs": ["psaconcept-01", "psaconcept-02", "psaconcept-03"]}], "cw": 900, "ch": 507}, {"id": "zoetis", "client": "Zoetis", "format": "Creative concepting", "count": "36 pages", "tags": "concept", "title": "Creative concepts for Zoetis", "cover": "zoetis-01", "body": [["The work", "A full round of creative concepting for Zoetis, from idea to visual routes."]], "sets": [{"imgs": ["zoetis-01", "zoetis-02", "zoetis-03", "zoetis-04", "zoetis-05", "zoetis-06", "zoetis-07", "zoetis-08", "zoetis-09", "zoetis-10", "zoetis-11", "zoetis-12", "zoetis-13", "zoetis-14", "zoetis-15", "zoetis-16", "zoetis-17", "zoetis-18", "zoetis-19", "zoetis-20", "zoetis-21", "zoetis-22", "zoetis-23", "zoetis-24", "zoetis-25", "zoetis-26", "zoetis-27", "zoetis-28", "zoetis-29", "zoetis-30", "zoetis-31", "zoetis-32", "zoetis-33", "zoetis-34", "zoetis-35", "zoetis-36"]}], "cw": 900, "ch": 507}, {"id": "downy", "client": "Downy", "format": "Concept", "count": "1 board", "tags": "concept", "title": "Hand Me Downy", "cover": "downy-01", "body": [], "sets": [{"imgs": ["downy-01"]}], "cw": 900, "ch": 582}, {"id": "tracy", "client": "Tracy O’Malley", "format": "Podcast email campaign", "count": "50+ emails", "tags": "content", "span": "", "title": "Becoming Bulletproof", "cover": "tracy-01", "body": [["The project", "An ongoing email campaign that summarizes each episode of Tracy O’Malley’s podcast, Becoming Bulletproof, and drives readers to listen. This is one of more than 50 emails and summaries."]], "links": [["Read the summaries on tracyomalley.com", "http://tracyomalley.com/podcast/"]], "sets": [{"imgs": ["tracy-01", "tracy-02", "tracy-03", "tracy-04", "tracy-05", "tracy-06", "tracy-07"]}], "cw": 900, "ch": 900}, {"id": "remoteyear", "client": "Remote Year", "format": "Writing contest", "count": "Winner · $5,000 grant", "tags": "content", "title": "Winner of the first Remote Year writing contest", "cover": "schwane-01", "body": [["The award", "Won Remote Year’s first-ever writing contest, and a $5,000 grant toward a year on the program."], ["The prompt", "In 250 words or less, explain the importance of community, empathy, and perspective while traveling."], ["About Remote Year", "Remote Year brings entrepreneurs and remote workers together to live around the world and work remotely as a community."]], "sets": [{"imgs": ["schwane-01", "schwane-02", "schwane-03", "schwane-04"]}], "cw": 673, "ch": 773}, {"id": "ue", "client": "Ultimate Ears (Logitech)", "format": "Blog posts", "count": "2 posts", "tags": "content", "title": "Why earphones fall out, and a gift worth giving", "cover": "ue1-01", "body": [["The work", "Two blog posts for Ultimate Ears: one on why earphones fall out so often and how Ultimate Ears solves it, and a holiday post that makes the case for giving Ultimate Ears."]], "links": [["Read: why earphones fall out (PDF)", "https://maya-francotayar.squarespace.com/s/Ultimate-Ears-pdf.pdf"], ["Read: ’Tis the season (PDF)", "https://maya-francotayar.squarespace.com/s/Tis-the-season.pdf"]], "sets": [{"label": "Why earphones fall out", "imgs": ["ue1-01"]}, {"label": "Holiday post", "imgs": ["ue2-01"]}], "cw": 900, "ch": 561}, {"id": "novo", "client": "Novo (Staynovo.com)", "format": "Travel & city blog", "count": "6 posts", "tags": "content", "title": "City guides for business travelers", "cover": "cafes-01", "body": [["The work", "Blog posts for Novo, a company providing furnished, affordable, and social living for business travelers: travel accessories, the best NYC cafés for remote work, happy hours, last-minute Labor Day getaways, must-see art exhibits, and spring events."]], "links": [["Read: Must-see NYC exhibits (PDF)", "https://maya-francotayar.squarespace.com/s/Novo-blog-Art-exhibitions.pdf"], ["Read: Spring events in NYC (PDF)", "https://maya-francotayar.squarespace.com/s/Novo-blog-Spring-festivities.pdf"]], "sets": [{"label": "Top 10 travel accessories", "imgs": ["travelacc-01", "travelacc-02", "travelacc-03"]}, {"label": "Top 10 cafés to work remotely in NYC", "imgs": ["cafes-01", "cafes-02", "cafes-03"]}, {"label": "NYC happy hours", "imgs": ["happyhours-01", "happyhours-02", "happyhours-03", "happyhours-04", "happyhours-05", "happyhours-06"]}, {"label": "Last-minute Labor Day getaways", "imgs": ["laborday-01", "laborday-02", "laborday-03", "laborday-04"]}, {"label": "Must-see NYC exhibits", "imgs": ["exhibits-01"]}, {"label": "Upcoming spring events in NYC", "imgs": ["springevents-01"]}], "cw": 750, "ch": 862}], "sizes": {"schwane-01": [673, 1246], "schwane-02": [748, 1143], "schwane-03": [744, 1128], "schwane-04": [748, 1103], "tracy-01": [1400, 1400], "tracy-02": [1400, 1599], "tracy-03": [1400, 1647], "tracy-04": [1224, 1194], "tracy-05": [1238, 2], "tracy-06": [1248, 1116], "tracy-07": [1142, 1252], "pier-01": [1400, 1082], "pier-02": [1400, 1082], "pier-03": [1400, 1082], "pier-04": [1400, 1082], "pier-05": [1400, 1082], "pier-06": [1400, 1082], "pier-07": [1400, 1082], "pier-08": [1400, 1082], "pier-09": [1400, 1082], "pier-10": [1400, 1082], "pier-11": [1400, 1082], "pier-12": [1400, 1082], "pier-13": [1400, 1082], "pier-14": [1400, 1082], "pier-15": [1400, 1082], "pier-16": [1400, 1082], "pier-17": [1400, 1082], "pier-18": [1400, 1082], "pier-19": [1400, 1082], "pier-20": [1400, 1082], "pier-21": [1400, 1082], "pier-22": [1400, 1082], "pier-23": [1400, 1082], "pier-24": [1400, 1082], "pier-25": [1400, 1082], "pier-26": [1400, 1082], "pier-27": [1400, 1082], "pier-28": [1400, 1082], "pier-29": [1400, 1082], "pier-30": [1400, 1082], "pier-31": [1400, 1082], "pier-32": [1400, 1082], "pier-33": [1400, 1082], "nebel-01": [1400, 1946], "nebel-02": [1400, 1946], "nebel-03": [1400, 1946], "nebel-04": [1400, 1946], "nebel-05": [1400, 1946], "nebel-06": [1400, 1946], "nebel-07": [1400, 1946], "nebel-08": [1400, 1946], "nebel-09": [1400, 1946], "nebel-10": [1400, 1946], "nebel-11": [1400, 1946], "nebel-12": [1400, 1946], "weg-01": [740, 958], "weg-02": [1326, 859], "weg-03": [1400, 1812], "weg-04": [1400, 1812], "ted-01": [816, 1084], "ted-02": [1400, 931], "ted-03": [810, 1084], "access-01": [1400, 1080], "access-02": [1398, 1082], "hcppdf-01": [1400, 1053], "hcppdf-02": [1400, 1058], "hcppdf-03": [1400, 1053], "hcppdf-04": [1400, 1048], "hcppdf-05": [1400, 1050], "hcppdf-06": [1400, 1053], "hcppdf-07": [1400, 1050], "hcppdf-08": [1400, 1052], "hcppdf-09": [1400, 1057], "hcppdf-10": [500, 474], "hcppdf-11": [1400, 1053], "touchvid-01": [640, 360], "touchvid-02": [1400, 906], "touchvid-03": [1400, 906], "living-01": [804, 334], "ana-01": [786, 320], "alex-01": [726, 332], "suzanne-01": [798, 334], "capvid-01": [1400, 590], "manifesto-01": [1200, 812], "pecweb-01": [308, 2000], "investfem-01": [1004, 1394], "investfem-02": [916, 1526], "investfem-03": [910, 1618], "investfem-04": [770, 1574], "investfem-05": [774, 1534], "investfem-06": [720, 1298], "investfem-07": [830, 1616], "closie-01": [1400, 788], "closie-02": [1400, 788], "closie-03": [1400, 788], "closie-04": [1400, 788], "closie-05": [1400, 788], "closie-06": [1400, 788], "closie-07": [1400, 788], "closie-08": [1400, 788], "closie-09": [1400, 788], "closie-10": [1400, 788], "closie-11": [1400, 788], "closie-12": [1400, 796], "closie-13": [1400, 788], "closie-14": [1400, 788], "closie-15": [1400, 788], "closie-16": [1400, 788], "closie-17": [1400, 788], "closie-18": [1400, 796], "pawclub-01": [1400, 933], "ra-01": [1366, 769], "ra-02": [1366, 768], "ra-03": [1366, 769], "ra-04": [270, 2000], "un-01": [1400, 905], "un-02": [1400, 906], "un-03": [1400, 906], "un-04": [1400, 906], "un-05": [1400, 906], "un-06": [1400, 906], "un-07": [1400, 906], "un-08": [1400, 906], "un-09": [1400, 906], "un-10": [1400, 906], "un-11": [1400, 906], "un-12": [1400, 906], "un-13": [1400, 906], "un-14": [1400, 906], "un-15": [1400, 906], "un-16": [1400, 906], "un-17": [1400, 906], "un-18": [1400, 906], "un-19": [1400, 906], "un-20": [1400, 906], "un-21": [1400, 906], "un-22": [1400, 906], "un-23": [1400, 906], "un-24": [1400, 906], "un-25": [1400, 906], "un-26": [1400, 906], "un-27": [1400, 906], "un-28": [1400, 906], "un-29": [1400, 906], "un-30": [1400, 906], "un-31": [1400, 906], "un-32": [1400, 906], "un-33": [1400, 906], "un-34": [1400, 906], "un-35": [1400, 906], "un-36": [1400, 906], "un-37": [1400, 906], "ally-01": [1400, 906], "ally-02": [1400, 906], "ally-03": [1400, 906], "downy-01": [1400, 906], "psaconcept-01": [1400, 789], "psaconcept-02": [1332, 750], "psaconcept-03": [1332, 750], "zoetis-01": [1400, 788], "zoetis-02": [1400, 788], "zoetis-03": [1400, 788], "zoetis-04": [1400, 788], "zoetis-05": [1400, 788], "zoetis-06": [1400, 788], "zoetis-07": [1400, 1813], "zoetis-08": [1400, 1813], "zoetis-09": [1400, 1813], "zoetis-10": [1400, 1813], "zoetis-11": [1400, 1813], "zoetis-12": [1400, 1813], "zoetis-13": [1400, 788], "zoetis-14": [1400, 788], "zoetis-15": [1400, 788], "zoetis-16": [1400, 788], "zoetis-17": [1400, 1813], "zoetis-18": [1400, 1813], "zoetis-19": [1400, 1813], "zoetis-20": [1400, 1813], "zoetis-21": [1400, 1813], "zoetis-22": [1400, 788], "zoetis-23": [1400, 788], "zoetis-24": [1400, 788], "zoetis-25": [1400, 788], "zoetis-26": [1400, 1813], "zoetis-27": [1400, 1813], "zoetis-28": [1400, 1813], "zoetis-29": [1400, 1813], "zoetis-30": [1400, 788], "zoetis-31": [1400, 788], "zoetis-32": [1400, 788], "zoetis-33": [1400, 788], "zoetis-34": [1400, 1813], "zoetis-35": [1400, 1813], "zoetis-36": [1400, 1813], "ue1-01": [1018, 634], "ue2-01": [1400, 933], "travelacc-01": [753, 1435], "travelacc-02": [745, 1423], "travelacc-03": [734, 1366], "cafes-01": [750, 1411], "cafes-02": [754, 1548], "cafes-03": [743, 1098], "happyhours-01": [1400, 933], "happyhours-02": [879, 546], "happyhours-03": [901, 613], "happyhours-04": [905, 613], "happyhours-05": [894, 592], "happyhours-06": [901, 297], "laborday-01": [1400, 933], "laborday-02": [876, 666], "laborday-03": [877, 611], "laborday-04": [885, 357], "exhibits-01": [1400, 1867], "springevents-01": [1400, 933], "portrait-01": [960, 637], "amvuttra-01": [1400, 1082], "amvuttra-02": [1400, 1082], "amvuttra-03": [1400, 1082], "amvuttra-04": [1400, 1082], "amvuttra-05": [1400, 1082], "amvuttra-06": [1400, 1082], "amvuttra-07": [1400, 1082], "amvuttra-08": [1400, 1082], "heart-01": [1400, 2706], "heart-02": [1400, 2934], "heart-03": [1400, 3117], "heart-04": [365, 1378], "heart-05": [345, 4000], "heart-06": [345, 4000], "heart-07": [345, 4000], "heart-08": [291, 4000], "leqvio-01": [1400, 800], "leqvio-02": [1400, 800], "leqvio-03": [1400, 800], "scout-01": [1400, 906], "scout-02": [1400, 906], "scout-03": [1400, 906], "scout-04": [1400, 906], "scout-05": [1400, 906], "snodium-01": [1201, 3581], "wellstar-01": [1400, 1082], "wellstar-02": [1400, 1082], "wellstar-03": [1400, 1082], "wellstar-04": [1400, 1082], "wellstar-05": [1400, 1082], "wellstar-06": [1400, 1082], "xywav-01": [1334, 750], "xywav-02": [1334, 750], "xywav-03": [1334, 750], "xywav-04": [1334, 750], "xywav-05": [1334, 750], "xywav-06": [1334, 750], "xywav-07": [1334, 750], "xywav-08": [1334, 750], "xywav-09": [1334, 750], "xywav-10": [1334, 750], "xywav-11": [1334, 750], "xywav-12": [1334, 750], "xywav-13": [1334, 750], "xywav-14": [1334, 750], "xywav-15": [1334, 750], "xywav-16": [1334, 750], "xywav-17": [1334, 750], "xywav-18": [1334, 750], "xywav-19": [1334, 750], "xywav-20": [1334, 750], "xywav-21": [1334, 750], "xywav-22": [1334, 750], "xywav-23": [1334, 750], "xywav-24": [1334, 750], "xywav-25": [1334, 750], "xywav-26": [1334, 750], "xywav-27": [1334, 750], "xywav-28": [1334, 750], "xywav-29": [1334, 750], "xywav-30": [1334, 750], "xywav-31": [1334, 750], "xywav-32": [1334, 750], "xywav-33": [1334, 750], "xywav-34": [1334, 750], "xywav-35": [1334, 750], "xywav-36": [1334, 750], "xywav-37": [1334, 750], "xywav-38": [1334, 750], "xywav-39": [1334, 750], "xywav-40": [1334, 750], "xywav-41": [1334, 750], "xywav-42": [1334, 750], "cerave-01": [1384, 1359], "cerave-02": [1400, 1104], "cerave-03": [441, 1359], "cerave-04": [1037, 1359]}};
+const P=DATA.projects, SZ=DATA.sizes;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const strip=s=>String(s).replace(/<[^>]+>/g,'');
+const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+try{$('#today').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});}catch(e){}
+
+const cos=["Eli Lilly","Novo Nordisk","Novartis","Regeneron","Merck","Pfizer","Ally Bank","Ultimate Ears","InvestFem","CeraVe"];
+const ul='<ul>'+cos.map(b=>`<li>${b}</li>`).join('')+'</ul>';
+$('#track').innerHTML=ul+ul.replace('<ul>','<ul aria-hidden="true">');
+
+const F=[["all","All"],["health","Health & pharma"],["web","Websites"],["concept","Campaigns & concepts"],["video","Video"],["content","Email & content"]];
+$('#chips').innerHTML=F.map(([k,l],i)=>`<button class="chip" type="button" data-f="${k}" aria-pressed="${i===0}">${esc(l)}</button>`).join('');
+
+const KICK={health:"Health & pharma",web:"Websites",concept:"Campaigns & concepts",video:"Video",content:"Email & content"};
+function dek(p){const b=(p.body&&p.body[0])?strip(p.body[0][1]):`${p.format} for ${p.client}.`;return b.length>150?b.slice(0,b.lastIndexOf(' ',147))+'…':b;}
+function cardHTML(p){
+  const sec=KICK[p.tags.split(' ')[0]];
+  return `<a class="art${p.span==='wide'?' wide':''}" href="#${p.id}" data-id="${p.id}" data-tags="${p.tags}">
+    <div class="ph">${p.video?'<span class="vtag">Video</span>':''}<img src="cv/${p.id}.webp" width="${p.cw}" height="${p.ch}" alt="${esc(strip(p.title))}" loading="lazy">${p.video?'<span class="play" aria-hidden="true"></span>':''}</div>
+    <span class="kick">${esc(sec)} · ${esc(p.client)}</span>
+    <h3>${p.title}</h3><p>${esc(dek(p))}</p></a>`;
+}
+$('#grid').innerHTML=P.map(cardHTML).join('');
+$('#count').textContent=P.length;
+const cards=[...document.querySelectorAll('.art')];
+$('#chips').addEventListener('click',e=>{
+  const b=e.target.closest('.chip'); if(!b) return;
+  document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  const f=b.dataset.f; let n=0;
+  cards.forEach(c=>{const on=f==='all'||c.dataset.tags.split(' ').includes(f); c.hidden=!on; if(on)n++;});
+  $('#count').textContent=n;
+});
+
+const sheet=$('#sheet'); let cur=-1, lastFocus=null;
+function img(k){const s=SZ[k]||[1200,900];return `<img src="img/${k}.webp" width="${s[0]}" height="${s[1]}" alt="" loading="lazy">`}
+function setHTML(s,si){
+  let h=`<div class="set">`+(s.label?`<h5>${esc(s.label)}</h5>`:'');
+  if(s.videos) h+=`<div class="vids">`+s.videos.map(([t,th,u])=>`<a class="vid" href="${u}" target="_blank" rel="noopener"><div class="frame">${img(th)}<span class="play" aria-hidden="true"></span></div><b>${esc(t)}</b><span class="small">Watch on Vimeo ↗</span></a>`).join('')+`</div>`;
+  if(s.imgs&&s.imgs.length){
+    const n=s.imgs.length, cls=n===1?'one':(n<=3?'few':''), LIM=9;
+    h+=`<div class="shots ${cls}">`+s.imgs.map((k,i)=>`<button class="shot" type="button" data-set="${si}" data-i="${i}"${i>=LIM?' hidden':''} aria-label="Enlarge image ${i+1} of ${n}">${img(k)}</button>`).join('')+`</div>`;
+    if(n>LIM) h+=`<button class="pill more" type="button" data-more>Show all ${n} pages</button>`;
+  }
+  return h+`</div>`;
+}
+function openCase(id,push){
+  const i=P.findIndex(p=>p.id===id); if(i<0) return;
+  cur=i; const p=P[i];
+  const facts=[["Client",p.client],["Format",p.format],["Scope",p.count]].map(([a,b])=>`<div><dt>${a}</dt><dd>${esc(b)}</dd></div>`).join('');
+  const body=(p.body||[]).map(([h,t])=>`<section><h4>${esc(h)}</h4><p>${t}</p></section>`).join('');
+  const links=(p.links||[]).length?`<div class="links">`+p.links.map(([t,u])=>`<a class="pill" href="${u}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join('')+`</div>`:'';
+  $('#case').innerHTML=`<div class="case-head"><div class="wrap">
+      <span class="kick">${esc(KICK[p.tags.split(' ')[0]])} · ${esc(p.format)}</span>
+      <h2 id="case-title">${p.title}</h2><dl class="facts">${facts}</dl>
+      ${body?`<div class="case-body">${body}</div>`:''}${links}
+    </div></div>
+    <div class="gallery"><div class="wrap">${p.sets.map(setHTML).join('')}</div></div>`;
+  if(!sheet.classList.contains('open')){lastFocus=document.activeElement;sheet.classList.add('open');document.body.classList.add('locked');}
+  sheet.scrollTop=0; sheet.focus({preventScroll:true});
+  if(push!==false && location.hash!=='#'+id) history.pushState(null,'','#'+id);
+}
+function closeCase(){
+  if(!sheet.classList.contains('open')) return;
+  sheet.classList.remove('open');document.body.classList.remove('locked');
+  if(location.hash) history.pushState(null,'','#work');
+  const c=document.querySelector(`.art[data-id="${P[cur]&&P[cur].id}"]`); (c||lastFocus)?.focus({preventScroll:true});
+}
+document.addEventListener('click',e=>{
+  if(e.target.closest('#dots')) return;
+  const c=e.target.closest('.art,.q'); if(c){const id=c.dataset.id||c.getAttribute('href').slice(1); if(P.some(p=>p.id===id)){e.preventDefault();openCase(id);return;}}
+  const m=e.target.closest('[data-more]'); if(m){m.previousElementSibling.querySelectorAll('.shot[hidden]').forEach(x=>x.hidden=false);m.remove();return;}
+  const s=e.target.closest('.shot'); if(s){openLB(+s.dataset.set,+s.dataset.i);}
+});
+$('#close').onclick=closeCase;
+const step=d=>{const vis=cards.filter(c=>!c.hidden).map(c=>c.dataset.id);let j=vis.indexOf(P[cur].id);if(j<0)j=0;openCase(vis[(j+d+vis.length)%vis.length]);};
+$('#prevp').onclick=()=>step(-1); $('#nextp').onclick=()=>step(1);
+function route(){const id=location.hash.slice(1); if(P.some(p=>p.id===id)) openCase(id,false); else if(sheet.classList.contains('open')){sheet.classList.remove('open');document.body.classList.remove('locked');}}
+addEventListener('popstate',route); addEventListener('hashchange',route);
+
+const lb=$('#lb'), lbimg=$('#lbimg'); let L=[],li=0;
+function openLB(si,i){L=P[cur].sets[si].imgs;li=i;showLB();lb.classList.add('open');$('#lbclose').focus({preventScroll:true});}
+function showLB(){const k=L[li],s=SZ[k]||[1,1];lbimg.src=`img/${k}.webp`;lbimg.width=s[0];lbimg.height=s[1];lbimg.className=s[1]/s[0]>1.6?'tall':'';$('#lbstage').scrollTop=0;$('#lbcount').textContent=`${li+1} / ${L.length}`;$('#lbprev').hidden=$('#lbnext').hidden=L.length<2;}
+const closeLB=()=>lb.classList.remove('open');
+$('#lbclose').onclick=closeLB;
+$('#lbprev').onclick=()=>{li=(li-1+L.length)%L.length;showLB()};
+$('#lbnext').onclick=()=>{li=(li+1)%L.length;showLB()};
+$('#lbstage').addEventListener('click',e=>{if(e.target.id==='lbstage')closeLB()});
+addEventListener('keydown',e=>{
+  if(lb.classList.contains('open')){if(e.key==='Escape')closeLB();if(e.key==='ArrowRight')$('#lbnext').click();if(e.key==='ArrowLeft')$('#lbprev').click();return;}
+  if(sheet.classList.contains('open')&&e.key==='Escape')closeCase();
+});
+
+const QL=[["When we’re hand in hand, arm in arm, we feel closest to the ones we love.","Taltz · Don’t Give Up film","touch"],["Every second MhATTRs.","AMVUTTRA · campaign concept","amvuttra"],["I will turn my back on you… while you change into your hospital gown.","Wellstar · pitch concept","wellstar"],["Seize today. And tomorrow.","Taltz · psoriatic arthritis concept","psaconcept"]];
+let qi=0,qt=null; const hot=$('#hot'),hsrc=$('#hotsrc'),hq=$('#hotq');
+$('#dots').innerHTML=QL.map((q,i)=>`<button type="button" aria-label="${esc(q[0])}" aria-current="${i===0}"></button>`).join('');
+function showQ(i){qi=(i+QL.length)%QL.length;const set=()=>{hot.textContent=QL[qi][0];hsrc.textContent=QL[qi][1];hq.setAttribute('href','#'+QL[qi][2]);hot.style.opacity=1;};
+  document.querySelectorAll('#dots button').forEach((b,j)=>b.setAttribute('aria-current',j===qi));
+  if(calm){set();return;} hot.style.opacity=0; setTimeout(set,350);}
+const runQ=()=>{if(!calm){clearInterval(qt);qt=setInterval(()=>showQ(qi+1),3600);}};
+$('#dots').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;e.preventDefault();showQ([...b.parentNode.children].indexOf(b));runQ();});
+hq.addEventListener('mouseenter',()=>clearInterval(qt)); hq.addEventListener('mouseleave',runQ); runQ();
+
+const ed=$('#edit');
+if(!calm&&'IntersectionObserver' in window&&ed.getBoundingClientRect().top>innerHeight){
+  ed.classList.add('pre');
+  new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){ed.classList.add('go');requestAnimationFrame(()=>ed.classList.remove('pre'));o.disconnect();}},{threshold:.6}).observe(ed);
+}
+
+const folio=$('#folio'),mast=$('.mast');
+addEventListener('scroll',()=>folio.classList.toggle('show',mast.getBoundingClientRect().bottom<40),{passive:true});
+
+$('#copy').addEventListener('click',async()=>{
+  const b=$('#copy');
+  try{await navigator.clipboard.writeText('mftayar@gmail.com');b.textContent='Copied';}
+  catch(err){const r=document.createRange();r.selectNodeContents($('#email'));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press copy';}
+  setTimeout(()=>b.textContent='Copy email',2200);
+});
+
+if(matchMedia('(pointer:fine)').matches&&!calm){
+  const cu=$('#cursor'); let x=0,y=0,tx=0,ty=0,run=false;
+  const loop=()=>{x+=(tx-x)*.2;y+=(ty-y)*.2;cu.style.left=x+'px';cu.style.top=y+'px';if(Math.abs(tx-x)+Math.abs(ty-y)>.5)requestAnimationFrame(loop);else run=false;};
+  addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;if(!run){run=true;requestAnimationFrame(loop);}
+    const c=e.target.closest&&e.target.closest('.art .ph,.shot,.vid .frame');
+    cu.textContent=c&&c.closest('.vid')?'Play':(c&&c.classList.contains('shot')?'Zoom':'Read');
+    cu.classList.toggle('on',!!c);},{passive:true});
+  document.addEventListener('pointerleave',()=>cu.classList.remove('on'));
+}
+route();
+</script>
